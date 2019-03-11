@@ -88,7 +88,7 @@ defmodule MateriaBatch.BatchManagers.JobScheduleManager do
        |> Enum.map(fn(job) ->
         #JobExecuter.start(job.job_code)
         JobSchedules.update_job_schedule(job, %{status: JobSchedule.status.running})
-        spawn_link(JobExecuter, :execute_job, [job, state])
+        spawn(JobExecuter, :execute_job, [job, state])
         #JobExecuter.execute_job(job)
       end)
 
