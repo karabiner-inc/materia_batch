@@ -30,3 +30,12 @@ config :guardian, Guardian.DB,
  schema_name: "guardian_tokens", # default
 #token_types: ["refresh_token"], # store all token types if not set
  sweep_interval: 60 # default: 60 minutes
+
+ # Configures MateriaBatch
+ config :materia_batch, MateriaBatch.JobSchedules.JobScheduleManager,
+  max_concurrent_jobs: 3,
+  job_check_interval: 60000 # default 60000msec
+
+# Configures MateriUtils
+ config :materia_utils,
+  test_base_datetime: "2019-03-03T00:00:00.000Z"
