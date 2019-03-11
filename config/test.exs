@@ -33,7 +33,7 @@ config :guardian, Guardian.DB,
 
 # Configures MateriaBatch
  config :materia_batch, MateriaBatch.JobSchedules.JobScheduleManager,
-  max_concurrent_jobs: 2,
+  max_concurrent_jobs: 3,
   job_check_interval: 60000 # default 60000msec
 
 # Configures MateriUtils

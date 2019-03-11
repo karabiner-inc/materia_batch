@@ -14,7 +14,7 @@ defmodule MateriaBatch.Test.Application do
       supervisor(MateriaBatchWeb.Test.Endpoint, []),
       # Start your own worker by calling: MateriaBatch.Worker.start_link(arg1, arg2, arg3)
       # worker(MateriaBatch.Worker, [arg1, arg2, arg3]),
-      worker(MateriaBatch.BatchManagers.JobScheduleManager, [])
+      #worker(MateriaBatch.BatchManagers.JobScheduleManager, [])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
@@ -27,6 +27,5 @@ defmodule MateriaBatch.Test.Application do
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
     MateriaBatchWeb.Test.Endpoint.config_change(changed, removed)
-    :ok
   end
 end
