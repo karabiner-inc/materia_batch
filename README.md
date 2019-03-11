@@ -1,4 +1,4 @@
-# materia_batch Commerce
+# Materia Batch
 
 [![hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/karabiner-inc/materia_batch/blob/master/LICENSE)
 [![Coverage Status](https://coveralls.io/repos/github/karabiner-inc/materia_batch/badge.svg?branch=master)](https://coveralls.io/github/karabiner-inc/materia_batch?branch=master)
