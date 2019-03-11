@@ -1,0 +1,17 @@
+{
+    "skip_files": [
+      "lib/mix/*",
+      "lib/materia_batch.ex",
+      "lib/materia_batch_web.ex",
+      "lib/materia_batch_web/gettext.ex",
+      "lib/materia_batch_web/router.ex",
+      "lib/materia_batch_web/controllers/fallback_controller.ex",
+      "lib/materia_batch_web/views/changeset_view.ex",
+      "lib/materia_batch_web/views/error_helpers.ex",
+      "lib/materia_batch_web/views/error_view.ex",
+      "lib/materia_batch_web/views/layout_view.ex",
+      "lib/materia_batch_web/views/page_view.ex",
+      "lib/materia_batch_web/channels/user_socket.ex",
+      "test/support/*"
+    ]
+  }
