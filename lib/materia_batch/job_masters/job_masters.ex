@@ -108,5 +108,4 @@ defmodule MateriaBatch.JobMasters do
     @repo
     |> EctoUtil.select_by_param(JobMaster, params)
   end
-
 end

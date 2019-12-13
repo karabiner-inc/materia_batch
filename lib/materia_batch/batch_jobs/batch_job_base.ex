@@ -1,5 +1,4 @@
 defmodule MateriBatch.BatchJobs.BatchJobBase do
-
   alias Ecto.Multi
   require Logger
 
@@ -8,9 +7,10 @@ defmodule MateriBatch.BatchJobs.BatchJobBase do
     Logger.debug("#{__MODULE__} single_transaction start. repo:#{inspect(repo)}")
 
     try do
-      with {:ok, result} <- Multi.new
-      |> Multi.run(function_atom, module, function_atom, attr)
-      |> repo.transaction() do
+      with {:ok, result} <-
+             Multi.new()
+             |> Multi.run(function_atom, module, function_atom, attr)
+             |> repo.transaction() do
         {:ok, result}
       else
         {:error, function, message, _result} ->
@@ -27,7 +27,5 @@ defmodule MateriBatch.BatchJobs.BatchJobBase do
         Logger.info("#{Exception.format_stacktrace(System.stacktrace())}")
         {:error, "#{inspect(e)}"}
     end
-
   end
-
 end

@@ -27,7 +27,7 @@ defmodule MateriaBatchWeb.JobScheduleView do
       start_datetime: job_schedule.start_datetime,
       end_datetime: job_schedule.end_datetime,
       result: job_schedule.result,
-      lock_version: job_schedule.lock_version,
+      lock_version: job_schedule.lock_version
     }
   end
 end

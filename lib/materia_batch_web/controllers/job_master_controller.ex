@@ -4,7 +4,7 @@ defmodule MateriaBatchWeb.JobMasterController do
   alias MateriaBatch.JobMasters
   alias MateriaBatch.JobMasters.JobMaster
 
-  action_fallback MateriaBatchWeb.FallbackController
+  action_fallback(MateriaBatchWeb.FallbackController)
 
   def index(conn, _params) do
     job_mst = JobMasters.list_job_mst()
@@ -35,6 +35,7 @@ defmodule MateriaBatchWeb.JobMasterController do
 
   def delete(conn, %{"id" => id}) do
     job_master = JobMasters.get_job_master!(id)
+
     with {:ok, %JobMaster{}} <- JobMasters.delete_job_master(job_master) do
       send_resp(conn, :no_content, "")
     end

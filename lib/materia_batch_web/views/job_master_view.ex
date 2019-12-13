@@ -24,7 +24,7 @@ defmodule MateriaBatchWeb.JobMasterView do
       priority: job_master.priority,
       schedule_period_type: job_master.schedule_period_type,
       calender_type: job_master.calender_type,
-      lock_version: job_master.lock_version,
+      lock_version: job_master.lock_version
     }
   end
 end

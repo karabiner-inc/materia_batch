@@ -4,7 +4,7 @@ defmodule MateriaBatchWeb.JobScheduleController do
   alias MateriaBatch.JobSchedules
   alias MateriaBatch.JobSchedules.JobSchedule
 
-  action_fallback MateriaBatchWeb.FallbackController
+  action_fallback(MateriaBatchWeb.FallbackController)
 
   def index(conn, _params) do
     job_schedules = JobSchedules.list_job_schedules()
@@ -35,6 +35,7 @@ defmodule MateriaBatchWeb.JobScheduleController do
 
   def delete(conn, %{"id" => id}) do
     job_schedule = JobSchedules.get_job_schedule!(id)
+
     with {:ok, %JobSchedule{}} <- JobSchedules.delete_job_schedule(job_schedule) do
       send_resp(conn, :no_content, "")
     end
