@@ -120,15 +120,13 @@ defmodule MateriaBatch.JobSchedules do
   1
   """
   def list_executable_jobs(base_datetime, limit) do
-
     JobSchedule
-    |> where([s], s.next_check_datetime <= ^base_datetime )
-    |> where([s], s.status == ^JobSchedule.status.initial )
+    |> where([s], s.next_check_datetime <= ^base_datetime)
+    |> where([s], s.status == ^JobSchedule.status().initial)
     |> order_by([:priority, :schedule_datetime, :job_code])
     |> limit(^limit)
     |> lock("FOR UPDATE")
     |> @repo.all()
-
   end
 
   @doc """
@@ -140,10 +138,9 @@ defmodule MateriaBatch.JobSchedules do
   """
   def list_running_jobs() do
     JobSchedule
-    |> where([s], s.status == ^JobSchedule.status.running )
+    |> where([s], s.status == ^JobSchedule.status().running)
     |> order_by([:start_datetime])
     |> lock("FOR UPDATE")
     |> @repo.all()
   end
-
 end
